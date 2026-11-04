@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Liste des utilisateurs</title>
+</head>
+<body>
+<h1>Utilisateurs</h1>
+<a th:href="@{/adduser}">Ajouter un utilisateur</a>
+
+<table border="1">
+    <tr>
+        <th>Nom</th>
+        <th>Email</th>
+    </tr>
+    <!----th:each : Boucle sur la liste des utilisateurs
+    th:text : Insère la valeur de l'attribut de l'objet.
+    th:href : Génère l'URL dynamique.-->
+    <tr th:each="user : ${users}">
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.email}"></td>
+    </tr>
+</table>
+</body>
+</html>
